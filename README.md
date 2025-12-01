@@ -226,7 +226,7 @@ Output:
 Models/<run_name>/prediction.npy
 ```
 
-## Post-processing Workfliw
+## Post-processing Workflow
 ```bash
 python postprocessing.py
 ```
