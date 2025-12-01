@@ -1,4 +1,4 @@
-# ANN_pipeline/inference.py
+# pdfANN/inference.py
 from __future__ import annotations
 from pathlib import Path
 

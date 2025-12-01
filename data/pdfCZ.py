@@ -1,4 +1,4 @@
-# ANN_pipeline/data/pdf.py
+# pdfANN/data/pdf.py
 from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import Path

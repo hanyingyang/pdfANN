@@ -1,11 +1,11 @@
-# ANN Pipeline (TensorFlow)
+# pdfANN Pipeline (TensorFlow)
 
 This repository provides a modular pipeline for constructing, training, evaluating, and deploying Artificial Neural Network (ANN) models using TensorFlow/Keras.  
 
 ## Project Structure
 
 ```
-ANN_pipeline/
+pdfANN/
 ├── ann/
 │   ├── model.py             # ANN architecture and TensorFlow model builder
 │   ├── training.py          # Training loop, dataset handling, callbacks, outlier removal
@@ -13,8 +13,7 @@ ANN_pipeline/
 │   ├── utilities.py         # PCA tools, centring & scaling, outlier-removal routines
 │
 ├── data/
-│   ├── 489/
-│   ├── 801/					# DNS snapshots
+│   ├── <DNS_timestep>/      # DNS raw data
 │   ├── conAvg.m             # Calculate averaged reaction rate and density conditioned on c and Z
 │   ├── filQty.m             # DNS raw data processing (.h5)
 │   ├── pdfCZ.py             # DNS data processing → input features/target PDF extraction (KDE or histogram)

@@ -1,4 +1,4 @@
-# ANN_pipeline/train.py
+# pdfANN/train.py
 from __future__ import annotations
 from pathlib import Path
 

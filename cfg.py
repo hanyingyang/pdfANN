@@ -1,4 +1,4 @@
-# ANN_pipeline/cfg.py
+# pdfANN/cfg.py
 from dataclasses import asdict
 from pathlib import Path
 import json

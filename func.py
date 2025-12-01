@@ -1,4 +1,4 @@
-# ANN_pipeline/func
+# pdfANN/func
 from __future__ import annotations
 from scipy.stats import beta
 from scipy import interpolate
