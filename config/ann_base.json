@@ -1,0 +1,51 @@
+{
+  "input_dim": 4,
+  "hidden_layers": [
+    32,
+    64,
+    64,
+    64
+  ],
+  "activations": {
+    "name": "leaky_relu",
+    "alpha": 0.01
+  },
+  "use_batchnorm": [
+    false,
+    true,
+    true,
+    true
+  ],
+  "bn_momentum": 0.9,
+  "bn_epsilon": 1e-05,
+  "dropout_rates": [
+    0.0,
+    0.2,
+    0.2,
+    0.2
+  ],
+  "kernel_regularizers": {
+    "l2": 0.01
+  },
+  "kernel_initializers": "normal",
+  "bias_initializers": "zeros",
+  "output_dim": 100,
+  "output_activation": "softmax",
+  "output_kernel_initializer": "glorot_uniform",
+  "output_bias_initializer": "zeros",
+  "output_groups": [
+    45,
+    55
+  ],
+  "last_hidden_split": 32,
+  "separate_last_group_bn": true,
+  "separate_last_group_dropout": true,
+  "group_dropout_rates": 0.2,
+  "optimizer": "adam",
+  "lr": 0.01,
+  "loss": "binary_crossentropy",
+  "metrics": [
+    "mse",
+    "mae"
+  ]
+}
