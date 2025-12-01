@@ -1,6 +1,6 @@
 # Configuration Reference Guide
 This document explains all fields in **ANNConfig** (network architecture) and **TrainingConfig** (training procedure).  
-It is intended as a clear, concise reference for users configuring models in the `ANN_pipeline` project.
+It is intended as a clear, concise reference for users configuring models in the `pdfANN` project.
 
 ---
 
@@ -274,7 +274,7 @@ Resume training from directory.
 ---
 
 #### `base_cfg: Optional[str] = None`
-Path to base config directory containing ann_base.json and train_base.json (as generated in cfg.py): `ANN_pipeline/config/`
+Path to base config directory containing ann_base.json and train_base.json (as generated in cfg.py): `pdfANN/config/`
 
 ---
 
