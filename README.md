@@ -39,10 +39,10 @@ pdfANN/
 ### 1. Raw Data processing — `data/filQty.m`
 
 Filter the DNS snapshots:
-- Snapshots of lifted H2 flame at 2 time steps: 489 and 801 
-- Filter type: box (imboxfilt3), can change to Gaussian filter with imgaussfilt3
+- Snapshots of lifted H2 flame at available time steps
+- Filter type: box (imboxfilt3), optional: Gaussian filter (imgaussfilt3)
 - Filter width: 1 laminar flame thermal thickness: ~ 8 dx (0.44 mm)
-- Collects data at every 'Jump=18' points along each dimension of DNS domain
+- Collects data at every `Jump` points along each dimension of DNS domain
 
 ### 2. Input/target dataset — `data/pdfCZ.py`
 
@@ -95,7 +95,7 @@ Provides utilities for configuration management:
 - Dataclass-to-dictionary conversions  
 - Merging base configurations with CLI overrides  
 - Filtering unknown keys  
-- Default-value normalisation (e.g. AUTOTUNE handling)
+- Default `prefetch` value normalisation (e.g. AUTOTUNE handling)
 
 ### 7. Preprocessing & PCA Tools — `ann/utilities.py`
 
@@ -141,7 +141,7 @@ Standalone utilities for analysis:
 - **KL divergence** (`KLDiv`)  
 - **Jensen–Shannon divergence** (`JSDiv`)  
 - **Beta PDF evaluation** (`betaPDF`)  
-- **Copula-based PDF interpolation** (`copulaPDF`)
+- **Copula PDF evaluation** (`copulaPDF`)
 
 ### 12. Running environment
 
@@ -163,7 +163,7 @@ Run `filQty.m`
 
 Output: 
 ```
-data/<DNS_timestep>/<saved .mat file>
+data/<DNS_timestep>/<.mat>
 ```
 
 ### 2. Extract input and target dataset
@@ -177,7 +177,7 @@ data/<target .npy>
 
 (Optional)
 data/<input .npy>
-data/<filtered qty .npy>
+data/<filtered .npy>
 ```
 
 ## Training Workflow
@@ -188,16 +188,16 @@ data/<filtered qty .npy>
 python cfg.py
 ```
 
-### 2. Train a model using CLI arguments
+### 2. Train a model using CLI arguments with base configuration
+
+```bash
+python train.py -X data/<input.npy> -y data/<target.npy> -bc ./config
+```
+
+### 3. Train using CLI arguments with configuration defined in `train.py`
 
 ```bash
 python train.py -X data/<input.npy> -y data/<target.npy>
-```
-
-### 3. Train using configuration directory
-
-```bash
-python train.py --base-cfg ./config
 ```
 
 ### Output Files
@@ -217,7 +217,7 @@ Models/<run_name>/
 ## Inference Workflow
 
 ```bash
-python inference.py --resume-from Models/<run_name> --test-path data/X_test.npy
+python inference.py --resume-from Models/<run_name> --test-path data/<test_input.npy>
 ```
 
 Output:
